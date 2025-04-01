@@ -5,7 +5,9 @@
     <meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>РЕАЛИК | Транспортно-логистическая компания</title>
+    <!-- Иконки Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -50,21 +52,41 @@
             transition: opacity 0.5s ease;
         }
 
-        [data-theme="dark"] {
-            color-scheme: dark;
-        }
-
         [data-theme="dark"] body {
             background-color: var(--bg-dark);
             color: var(--text-light);
         }
 
         [data-theme="dark"] body::before {
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 90% 80%, rgba(255, 87, 34, 0.15) 0%, transparent 25%);
-            opacity: 0.9;
-        }
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.15) 0%, transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(255, 87, 34, 0.15) 0%, transparent 25%);
+    opacity: 0.9;
+}
+
+        [data-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .tab-content,
+[data-theme="dark"] nav {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--text-light) !important;
+}
+
+[data-theme="dark"] body::before {
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 87, 34, 0.1) 0%, transparent 20%);
+    opacity: 0.8;
+}
 
         .container {
             max-width: 1200px;
@@ -74,6 +96,7 @@
             z-index: 1;
         }
 
+        /* Логотип с анимацией */
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
@@ -110,6 +133,7 @@
             transform-origin: left;
         }
 
+        /* Навигация */
         nav {
             background: var(--card-bg-light);
             backdrop-filter: blur(12px);
@@ -178,6 +202,7 @@
             transform-origin: left;
         }
 
+        /* Контент вкладок */
         .tab-content {
             background: var(--card-bg-light);
             backdrop-filter: blur(12px);
@@ -264,6 +289,7 @@
             font-size: 0.8rem;
         }
 
+        /* Контакты */
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -297,12 +323,9 @@
             min-width: 24px;
         }
 
-        .phone-link {
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
+        
 
+        /* Анимация фона */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -320,32 +343,9 @@
             animation: float 15s infinite linear;
         }
 
-        .map-container {
-            margin-top: 2rem;
-            background: rgba(33, 150, 243, 0.1);
-            padding: 1.5rem;
-            border-radius: 12px;
-        }
 
-        .map-container i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            display: block;
-        }
 
-        .map-title {
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .map-iframe {
-            width: 100%;
-            border-radius: 8px;
-            border: none;
-            height: 400px;
-        }
-
+        /* Адаптивность */
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -375,25 +375,60 @@
                 grid-template-columns: 1fr;
             }
 
-            .map-iframe {
-                height: 300px;
-            }
-            
-            .map-container {
-                padding: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .map-iframe {
+            #map {
                 height: 250px;
             }
         }
 
+        /* Эффект параллакса */
         .parallax {
             transform-style: preserve-3d;
         }
 
+        /* Стили для карты */
+.map-container {
+    margin-top: 2rem;
+    background: rgba(33, 150, 243, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.map-container i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.map-title {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.map-iframe {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    height: 400px;
+}
+
+@media (max-width: 768px) {
+    .map-iframe {
+        height: 300px;
+    }
+    
+    .map-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-iframe {
+        height: 250px;
+    }
+}
+
+        /* Кастомный курсор */
         body {
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%232196F3'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E"), auto;
         }
@@ -404,15 +439,19 @@
     </style>
 </head>
 <body>
+    <!-- Анимация фона -->
     <div class="bg-animation">
         <div class="bg-circle" style="width: 300px; height: 300px; top: 10%; left: 5%; animation-duration: 20s;"></div>
         <div class="bg-circle" style="width: 200px; height: 200px; top: 60%; left: 80%; animation-duration: 15s; animation-delay: 2s;"></div>
         <div class="bg-circle" style="width: 400px; height: 400px; top: 30%; left: 50%; animation-duration: 25s; animation-delay: 1s;"></div>
     </div>
 
+    
     <div class="container">
+        <!-- Логотип с анимацией -->
         <div class="logo">РЕАЛИК</div>
         
+        <!-- Навигация с эффектом стекла -->
         <nav class="parallax" data-depth="0.1">
             <ul class="nav-list">
                 <li class="nav-link active" onclick="showTab(event, 'home')">
@@ -427,6 +466,7 @@
             </ul>
         </nav>
 
+        <!-- Контент вкладок -->
         <div id="home" class="tab-content active parallax" data-depth="0.05">
             <h2>РЕАЛИК</h2>
             <h3>Транспортно-логистическая компания</h3>
@@ -438,6 +478,7 @@
             <p>Мы работаем в условиях полной прозрачности и возможности контроля клиентом состояния доставки своего товара.</p>
             <p>По всем направлениям работает гибкая система ценообразования</p>
             
+            <!-- Дополнительный визуальный элемент -->
             <div style="margin-top: 2rem; text-align: center;">
                 <div style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); color: white; border-radius: 50px; font-weight: 500; box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);">
                     <i class="fas fa-truck-fast" style="margin-right: 0.5rem;"></i> Надежные логистические решения
@@ -462,6 +503,7 @@
                 <li>предоставление ЕЛС</li>
             </ul>
             
+            <!-- Графический элемент -->
             <div style="margin-top: 2rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
                 <div style="background: rgba(33, 150, 243, 0.1); padding: 1rem; border-radius: 12px; text-align: center; min-width: 120px; transition: var(--transition);">
                     <i class="fas fa-truck" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
@@ -491,69 +533,99 @@
                 </p>
                 <p>
                     <i class="fas fa-mobile-alt"></i>
-                    <span>сотовый: <a href="tel:+79147024833" class="phone-link">+7 (914) 702-48-33</a></span>
+                    <span>сотовый: +7 (914) 702-48-33</span>
                 </p>
                 <p>
                     <i class="fas fa-phone-alt"></i>
-                    <span>стационарный: <a href="tel:84234524844" class="phone-link">8 (42345) 2-48-44</a></span>
+                    <span>стационарный: 8 (42345) 2-48-44</span>
                 </p>
                 <p>
                     <i class="fas fa-envelope"></i>
-                    <span>email: <a href="mailto:rahmatevg@mail.ru" class="phone-link">rahmatevg@mail.ru</a></span>
+                    <span>email: rahmatevg@mail.ru</span>
                 </p>
             </div>
             
-            <div class="map-container">
-                <i class="fas fa-map-marked-alt"></i>
-                <div class="map-title">Мы находимся в Приморском крае</div>
-                <iframe src="https://yandex.ru/map-widget/v1/-/CHRdI-M9" class="map-iframe" allowfullscreen="true"></iframe>
-            </div>
+            <!-- Карта -->
+            <!-- Заменить текущий блок карты на этот -->
+<div class="map-container">
+    <i class="fas fa-map-marked-alt"></i>
+    <div class="map-title">Мы находимся в Приморском крае</div>
+    <iframe src="https://yandex.az/maps/-/CHRdr66f" class="map-iframe" allowfullscreen="true"></iframe>
+</div>
         </div>
     </div>
 
     <script>
-        function detectColorScheme() {
-            const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const body = document.body;
-            
-            if (isDark) {
-                body.setAttribute('data-theme', 'dark');
-                body.style.color = 'var(--text-light)';
-            } else {
-                body.removeAttribute('data-theme');
-                body.style.color = 'var(--text-dark)';
-            }
-        }
+        // Определение системной темы
+function detectColorScheme() {
+    const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const body = document.body;
+    
+    if (isDark) {
+        body.setAttribute('data-theme', 'dark');
+        body.style.color = 'var(--text-light)';
+    } else {
+        body.removeAttribute('data-theme');
+        body.style.color = 'var(--text-dark)';
+    }
+}
 
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            const body = document.body;
-            if (e.matches) {
-                body.setAttribute('data-theme', 'dark');
-                body.style.color = 'var(--text-light)';
-            } else {
-                body.removeAttribute('data-theme');
-                body.style.color = 'var(--text-dark)';
-            }
-        });
+// Слушатель изменения темы системы
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const body = document.body;
+    if (e.matches) {
+        body.setAttribute('data-theme', 'dark');
+        body.style.color = 'var(--text-light)';
+    } else {
+        body.removeAttribute('data-theme');
+        body.style.color = 'var(--text-dark)';
+    }
+});
 
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    detectColorScheme();
+    document.getElementById('home').classList.add('active');
+});
+        // Инициализация карты
+        
+            // Маркер офиса
+            new google.maps.Marker({
+                position: officeLocation,
+                map: map,
+                title: "ООО «РЕАЛИК»",
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                }
+            });
+    
+
+        // Переключение вкладок
         function showTab(event, tabId) {
+            // Скрыть все вкладки
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
             
+            // Показать выбранную вкладку
             document.getElementById(tabId).classList.add('active');
             
+            // Обновить активные пункты меню
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
             event.currentTarget.classList.add('active');
             
+            // Добавить анимацию
             document.getElementById(tabId).style.animation = 'none';
             setTimeout(() => {
                 document.getElementById(tabId).style.animation = 'fadeInUp 0.6s forwards';
             }, 10);
         }
 
+        
+
+        // Параллакс эффект
         document.addEventListener('mousemove', (e) => {
             const parallaxElements = document.querySelectorAll('.parallax');
             
@@ -566,6 +638,11 @@
             });
         });
 
+        // Анимация при скролле
+        const observerOptions = {
+            threshold: 0.1
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -573,12 +650,13 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
         document.querySelectorAll('.tab-content').forEach(content => {
             observer.observe(content);
         });
 
+        // Микроанимация для логотипа
         const logo = document.querySelector('.logo');
         logo.addEventListener('mouseenter', () => {
             logo.style.animation = 'none';
@@ -587,28 +665,11 @@
             }, 10);
         });
 
+        // Показать первую вкладку при загрузке
         document.addEventListener('DOMContentLoaded', function() {
-            detectColorScheme();
             document.getElementById('home').classList.add('active');
-            
-            // Добавляем обработчики для копирования телефона
-            document.querySelectorAll('.phone-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth > 768) { // На ПК копируем номер
-                        e.preventDefault();
-                        const phoneNumber = this.textContent.trim();
-                        navigator.clipboard.writeText(phoneNumber).then(() => {
-                            const originalText = this.textContent;
-                            this.textContent = 'Скопировано!';
-                            setTimeout(() => {
-                                this.textContent = originalText;
-                            }, 2000);
-                        });
-                    }
-                    // На мобильных устройствах стандартное поведение (звонок)
-                });
-            });
-        });
+    // Удалить вызов initMap(), если он был здесь
+});
     </script>
 </body>
 </html>
